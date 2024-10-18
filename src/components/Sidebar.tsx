@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 import SidebarItems from "./SidebarItems";
-import { UserButton } from "@clerk/nextjs";
 
 import { AuthSession, getUserAuth } from "@/lib/auth/utils";
+import Image from "next/image";
 
 const Sidebar = async () => {
   const session = await getUserAuth();
@@ -14,9 +14,10 @@ const Sidebar = async () => {
       <div className="flex flex-col justify-between h-full">
         <div className="space-y-4">
           <div className="flex">
-            <img
+            <Image
               src="https://dishub.pasuruankab.go.id/uploads/settings/1680717517_080c14a94397711739e3.png"
               width={20}
+              height={20}
               alt=""
             />
             <h3 className="text-lg font-semibold ml-4">Dishub</h3>
@@ -46,7 +47,6 @@ const UserDetails = ({ session }: { session: AuthSession }) => {
             {user.email ?? "john@doe.com"}
           </p>
         </div>
-        <UserButton afterSignOutUrl="/" />
       </div>
     </Link>
   );

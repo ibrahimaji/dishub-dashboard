@@ -1,9 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { getUserAuth } from "@/lib/auth/utils";
-import Link from "next/link";
-
 export default async function Home() {
-  const userAuth = await getUserAuth();
   return (
     <main className="space-y-6">
       <div className="w-full h-screen relative">
